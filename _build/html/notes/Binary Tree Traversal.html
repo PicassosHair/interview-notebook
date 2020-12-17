@@ -1,0 +1,444 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Binary Tree Traversal &mdash; Interview Preparation Notebook 1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Longest Common Subsequence" href="Longest Common Subsequence.html" />
+    <link rel="prev" title="Welcome" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Interview Preparation Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Algorithm</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Binary Tree Traversal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#question-list">Question List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#depth-first-traversals">Depth First Traversals:</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#breadth-first-traversals">Breadth First Traversals:</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#leetcode-problem">Leetcode Problem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#leecode-144-preorder">Leecode 144 - Preorder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#iterative-tree-traversal">Iterative Tree Traversal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recursive-tree-traversal">Recursive Tree Traversal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#leecode-94-inorder">Leecode 94 - Inorder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Iterative Tree Traversal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Recursive Tree Traversal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#leecode-145-postorder">Leecode 145 - Postorder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Iterative Tree Traversal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Recursive Tree Traversal</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#leecode-102-level-order">Leecode 102 - Level Order</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Iterative Tree Traversal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">Recursive Tree Traversal</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Longest Common Subsequence.html">Longest Common Subsequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single Number.html">Single Number</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interview Preparation Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Binary Tree Traversal</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/notes/Binary Tree Traversal.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="binary-tree-traversal">
+<h1>Binary Tree Traversal<a class="headerlink" href="#binary-tree-traversal" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="question-list">
+<h2>Question List<a class="headerlink" href="#question-list" title="Permalink to this headline">¶</a></h2>
+<p>94. Binary Tree Inorder Traversal <br />102. Binary Tree Level Order Traversal <br />144. Binary Tree Preorder Traversal <br />145. Binary Tree Postorder Traversal</p>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Tree Traversal is the fundamental for solving Tree’s problems. Following are the generally used ways for traversing trees:</p>
+<div class="section" id="depth-first-traversals">
+<h3>Depth First Traversals:<a class="headerlink" href="#depth-first-traversals" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Preorder: Root, Left, Right</li>
+<li>Inorder: Left, Root, Right</li>
+<li>Postorder: Left, Right, Root</li>
+</ul>
+</div>
+<div class="section" id="breadth-first-traversals">
+<h3>Breadth First Traversals:<a class="headerlink" href="#breadth-first-traversals" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Level Order</li>
+</ul>
+<br></div>
+</div>
+<div class="section" id="leetcode-problem">
+<h2>Leetcode Problem<a class="headerlink" href="#leetcode-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="leecode-144-preorder">
+<h3>Leecode 144 - Preorder<a class="headerlink" href="#leecode-144-preorder" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="iterative-tree-traversal">
+<h4>Iterative Tree Traversal<a class="headerlink" href="#iterative-tree-traversal" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span><span class="p">,</span> <span class="n">stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="recursive-tree-traversal">
+<h4>Recursive Tree Traversal<a class="headerlink" href="#recursive-tree-traversal" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">preorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<br></div>
+</div>
+<div class="section" id="leecode-94-inorder">
+<h3>Leecode 94 - Inorder<a class="headerlink" href="#leecode-94-inorder" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>Iterative Tree Traversal<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span><span class="p">,</span> <span class="n">stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    
+    <span class="k">while</span> <span class="n">stack</span> <span class="ow">or</span> <span class="n">root</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span>
+    
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span><span class="p">,</span> <span class="n">stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+        <span class="k">while</span> <span class="n">root</span><span class="p">:</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">left</span>
+        <span class="k">if</span> <span class="n">stack</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">right</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>Recursive Tree Traversal<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+    
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="leecode-145-postorder">
+<h3>Leecode 145 - Postorder<a class="headerlink" href="#leecode-145-postorder" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>Iterative Tree Traversal<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">postorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span><span class="p">,</span> <span class="n">stack</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="n">stack</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">root</span><span class="p">:</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">root</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">res</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Recursive Tree Traversal<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">postorderTraversal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="leecode-102-level-order">
+<h3>Leecode 102 - Level Order<a class="headerlink" href="#leecode-102-level-order" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>Iterative Tree Traversal<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">levelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">root</span><span class="p">:</span>
+        <span class="k">return</span> 
+
+    <span class="n">res</span><span class="p">,</span> <span class="n">level</span> <span class="o">=</span> <span class="p">[[]],</span> <span class="mi">0</span>
+    <span class="n">stack_cur</span><span class="p">,</span> <span class="n">stack_next</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">],</span> <span class="p">[]</span>
+
+    <span class="k">while</span> <span class="n">stack_cur</span> <span class="ow">or</span> <span class="n">stack_next</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">stack_cur</span><span class="p">:</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">stack_cur</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">level</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+                <span class="n">stack_next</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+                <span class="n">stack_next</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">level</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+            <span class="n">stack_cur</span> <span class="o">=</span> <span class="n">stack_next</span>
+            <span class="n">stack_next</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4>Recursive Tree Traversal<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">levelOrder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">node</span><span class="p">:</span> <span class="n">TreeNode</span><span class="p">,</span> <span class="n">level</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">node</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">res</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">level</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">([])</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">level</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">val</span><span class="p">)</span>
+
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">left</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">right</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">dfs</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Longest Common Subsequence.html" class="btn btn-neutral float-right" title="Longest Common Subsequence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Picasso
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

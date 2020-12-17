@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Single Number &mdash; Interview Preparation Notebook 1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Longest Common Subsequence" href="Longest Common Subsequence.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> Interview Preparation Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Algorithm</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Binary Tree Traversal.html">Binary Tree Traversal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Longest Common Subsequence.html">Longest Common Subsequence</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Single Number</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#question-list">Question List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-solution">Map Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bitwise-solution">Bitwise Solution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bitwise-operation">Bitwise Operation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#x-y">x &lt;&lt; y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1">x &gt;&gt; y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">x &amp; y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">x | y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#x">~ x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">x ^ y</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#boolean-algebra">Boolean algebra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#laws-of-boolean-algebra-example">Laws of Boolean Algebra Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#leetcode-problem">Leetcode Problem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-136-br">Leetcode 136 <br></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-137-br">Leetcode 137 <br></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#algorithm">Algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interview Preparation Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Single Number</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/notes/Single Number.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="single-number">
+<h1>Single Number<a class="headerlink" href="#single-number" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="question-list">
+<h2>Question List<a class="headerlink" href="#question-list" title="Permalink to this headline">¶</a></h2>
+<p>136. Single Number I <br />137. Single Number II <br />260. Single Number III</p>
+</div>
+<div class="section" id="map-solution">
+<h2>Map Solution<a class="headerlink" href="#map-solution" title="Permalink to this headline">¶</a></h2>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">map</span> <span class="pre">(dictionary)</span></code> to solve <strong>Single Number</strong> issues. The <code class="docutils literal notranslate"><span class="pre">map</span></code> stores keys for numbers and values for the frequency. In the end, literal <code class="docutils literal notranslate"><span class="pre">map</span></code> to find the answer.</p>
+<p><strong>Leetcode 260</strong></p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">singleNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        
+        <span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">:</span>
+                <span class="n">dic</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dic</span><span class="p">[</span><span class="n">num</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+        
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bitwise-solution">
+<h2>Bitwise Solution<a class="headerlink" href="#bitwise-solution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bitwise-operation">
+<h3>Bitwise Operation<a class="headerlink" href="#bitwise-operation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="x-y">
+<h4>x &lt;&lt; y<a class="headerlink" href="#x-y" title="Permalink to this headline">¶</a></h4>
+<p>Returns x with the bits shifted to the left by y places (and new bits on the right-hand-side are zeros). This is the same as multiplying x by 2**y.</p>
+</div>
+<div class="section" id="id1">
+<h4>x &gt;&gt; y<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>Returns x with the bits shifted to the right by y places. This is the same as //’ing x by 2**y.</p>
+</div>
+<div class="section" id="id2">
+<h4>x &amp; y<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>Does a “bitwise and”. Each bit of the output is 1 if the corresponding bit of x AND of y is 1, otherwise it’s 0.</p>
+</div>
+<div class="section" id="id3">
+<h4>x | y<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>Does a “bitwise or”. Each bit of the output is 0 if the corresponding bit of x AND of y is 0, otherwise it’s 1.</p>
+</div>
+<div class="section" id="x">
+<h4>~ x<a class="headerlink" href="#x" title="Permalink to this headline">¶</a></h4>
+<p>Returns the complement of x - the number you get by switching each 1 for a 0 and each 0 for a 1. This is the same as -x - 1.</p>
+</div>
+<div class="section" id="id4">
+<h4>x ^ y<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Does a “bitwise exclusive or”. Each bit of the output is the same as the corresponding bit in x if that bit in y is 0, and it’s the complement of the bit in x if that bit in y is 1.</p>
+</div>
+</div>
+<div class="section" id="boolean-algebra">
+<h3>Boolean algebra<a class="headerlink" href="#boolean-algebra" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>x | (x &amp; y) = x</li>
+<li>x &amp; (x | y) = x</li>
+<li>~(x | y) = ~x &amp; ~y</li>
+<li>~(x &amp; y) = ~x | ~y</li>
+<li>x | (y &amp; z) = (x | y) &amp; (x | z)</li>
+<li>x &amp; (y | z) = (x &amp; y) | (x &amp; z)</li>
+<li>x &amp; (y ^ z) = (x &amp; y) ^ (x &amp; z)</li>
+<li>x + y = (x ^ y) + ((x &amp; y) &lt;&lt; 1)</li>
+<li>x - y = ~(~x + y)</li>
+</ul>
+</div>
+<div class="section" id="laws-of-boolean-algebra-example">
+<h3>Laws of Boolean Algebra Example<a class="headerlink" href="#laws-of-boolean-algebra-example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Using the above laws, simplify the following expression:  (A + B)(A + C)
+
+Q =	(A + B).(A + C)	 
+ 	A.A + A.C + A.B + B.C	 – Distributive law
+ 	A + A.C + A.B + B.C	     – Idempotent AND law (A.A = A)
+ 	A(1 + C) + A.B + B.C	 – Distributive law
+ 	A.1 + A.B + B.C	         – Identity OR law (1 + C = 1)
+ 	A(1 + B) + B.C	         – Distributive law
+ 	A.1 + B.C	             – Identity OR law (1 + B = 1)
+Q =	A + (B.C)	             – Identity AND law (A.1 = A)
+</pre></div>
+</div>
+<br></div>
+</div>
+<div class="section" id="leetcode-problem">
+<h2>Leetcode Problem<a class="headerlink" href="#leetcode-problem" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="leetcode-136-br">
+<h3>Leetcode 136 <br><a class="headerlink" href="#leetcode-136-br" title="Permalink to this headline">¶</a></h3>
+<p>Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">singleNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">^</span><span class="n">y</span><span class="p">,</span> <span class="n">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-137-br">
+<h3>Leetcode 137 <br><a class="headerlink" href="#leetcode-137-br" title="Permalink to this headline">¶</a></h3>
+<p>Given a non-empty array of integers, every element appears three times except for one, which appears exactly once. Find that single one.</p>
+<div class="section" id="algorithm">
+<h4>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h4>
+<p>a is the high bit. b is the low bit. c is the data. a’ is the a’s result. b’ is the b’s result.
+|a|b|c|a’|b’|
+|-|-|-|-|-|
+|0|0|0|0|0|
+|0|1|0|0|1|
+|1|0|0|1|0|</p>
+<p>|a|b|c|a’|b’|
+|-|-|-|-|-|
+|0|0|1|0|1|
+|0|1|1|1|0|
+|1|0|1|0|0|</p>
+<p>b’ = 1: <code class="docutils literal notranslate"><span class="pre">(a==0</span> <span class="pre">&amp;&amp;</span> <span class="pre">b==1</span> <span class="pre">&amp;&amp;</span> <span class="pre">c==0)</span> <span class="pre">||</span> <span class="pre">(a==0</span> <span class="pre">&amp;&amp;</span> <span class="pre">b==0</span> <span class="pre">&amp;&amp;</span> <span class="pre">c==1)</span></code> <br>
+=&gt; <code class="docutils literal notranslate"><span class="pre">b'</span> <span class="pre">=</span> <span class="pre">(~a</span> <span class="pre">&amp;</span> <span class="pre">b</span> <span class="pre">&amp;</span> <span class="pre">~c)</span> <span class="pre">+</span> <span class="pre">(~a</span> <span class="pre">&amp;</span> <span class="pre">~b</span> <span class="pre">&amp;</span> <span class="pre">c)</span> <span class="pre">=</span> <span class="pre">~a</span> <span class="pre">&amp;</span> <span class="pre">(b</span> <span class="pre">&amp;</span> <span class="pre">~c</span> <span class="pre">+</span> <span class="pre">~b</span> <span class="pre">&amp;</span> <span class="pre">c)</span> <span class="pre">=</span> <span class="pre">~a</span> <span class="pre">&amp;</span> <span class="pre">(b</span> <span class="pre">^</span> <span class="pre">c)</span></code> <br><br>
+a’ = 1: <code class="docutils literal notranslate"><span class="pre">(a==1</span> <span class="pre">&amp;&amp;</span> <span class="pre">b==0</span> <span class="pre">&amp;&amp;</span> <span class="pre">c==0)</span> <span class="pre">||</span> <span class="pre">(a==0</span> <span class="pre">&amp;&amp;</span> <span class="pre">b==1</span> <span class="pre">&amp;&amp;</span> <span class="pre">c==1)</span></code> <br>
+=&gt; <code class="docutils literal notranslate"><span class="pre">a'</span> <span class="pre">=</span> <span class="pre">(a</span> <span class="pre">&amp;</span> <span class="pre">~b</span> <span class="pre">&amp;</span> <span class="pre">~c)</span> <span class="pre">+</span> <span class="pre">(~a</span> <span class="pre">&amp;</span> <span class="pre">b</span> <span class="pre">&amp;</span> <span class="pre">c)</span></code> <br>
+=&gt; <code class="docutils literal notranslate"><span class="pre">a'</span> <span class="pre">=</span> <span class="pre">(~a</span> <span class="pre">&amp;</span> <span class="pre">~b'</span> <span class="pre">&amp;</span> <span class="pre">c)</span> <span class="pre">+</span> <span class="pre">(a</span> <span class="pre">&amp;</span> <span class="pre">~b'</span> <span class="pre">&amp;</span> <span class="pre">~c)</span> <span class="pre">=</span> <span class="pre">~b'</span> <span class="pre">&amp;</span> <span class="pre">(~a</span> <span class="pre">&amp;</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">&amp;</span> <span class="pre">~c)</span> <span class="pre">=</span> <span class="pre">~b'</span> <span class="pre">&amp;</span> <span class="pre">(a</span> <span class="pre">^</span> <span class="pre">c)</span></code></p>
+</div>
+<div class="section" id="code">
+<h4>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">singleNumber</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">^</span> <span class="n">c</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">a</span>
+            <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">^</span> <span class="n">c</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">b</span>
+        <span class="k">return</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reference">
+<h4>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h4>
+<p>https://blog.csdn.net/qq_17550379/article/details/83926804
+https://blog.csdn.net/jiangxiewei/article/details/82227451</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="Longest Common Subsequence.html" class="btn btn-neutral float-left" title="Longest Common Subsequence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Picasso
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
