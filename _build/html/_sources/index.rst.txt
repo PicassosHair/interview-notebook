@@ -15,6 +15,8 @@ I start to compile notes for preparing interviews. In the algorithm part, I try 
    :hidden:
 
    Binary Tree Traversal <notes/Binary Tree Traversal.md>
+   Heap <notes/Heap.md>
    Longest Common Subsequence <notes/Longest Common Subsequence.md>
+   Monotonic Queue <notes/Monotonic Queue.md>
    Single Number <notes/Single Number.md>
 

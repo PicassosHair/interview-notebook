@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Heap (Priority Queue) &mdash; Interview Preparation Notebook 1.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Longest Common Subsequence" href="Longest Common Subsequence.html" />
+    <link rel="prev" title="Binary Tree Traversal" href="Binary Tree Traversal.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Interview Preparation Notebook
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Algorithm</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Binary Tree Traversal.html">Binary Tree Traversal</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Heap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#operations">Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#question-list">Question List</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#leetcode-solution">Leetcode Solution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-215-kth-largest-element-in-an-array">Leetcode 215: Kth Largest Element in an Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-347-top-k-frequent-elements">Leetcode 347: Top K Frequent Elements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-373-find-k-pairs-with-smallest-sums">Leetcode 373: Find K Pairs with Smallest Sums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-414-third-maximum-number">Leetcode 414: Third Maximum Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-451-sort-characters-by-frequency">Leetcode 451: Sort Characters By Frequency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-692-top-k-frequent-words">Leetcode 692: Top K Frequent Words</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leetcode-973-k-closest-points-to-origin">Leetcode 973: K Closest Points to Origin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Longest Common Subsequence.html">Longest Common Subsequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Monotonic Queue.html">Monotonic Queue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Single Number.html">Single Number</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Interview Preparation Notebook</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Heap (Priority Queue)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/notes/Heap.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="heap-priority-queue">
+<h1>Heap (Priority Queue)<a class="headerlink" href="#heap-priority-queue" title="Permalink to this headline">¶</a></h1>
+<p>A heap is a specialized tree-based data structure which is essentially a <strong>complete tree</strong> (a binary tree in which every level, except possibly the last, is complete filled, and all nodes are as far left as possible).</p>
+<p><strong>Min-Heap</strong>: The root node has the minimum value, and the value of each node is equal to or greater than the value of its parent node.</p>
+<p><strong>Max-Heap</strong>: The root node has the maximum value, and the value of each node is equal to or less than the value of its parent node.</p>
+<div class="section" id="operations">
+<h2>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>insert</strong>: adding a new key to the heap <code class="docutils literal notranslate"><span class="pre">O(log(n))</span></code></li>
+<li><strong>find-max (or find-min)</strong>: find a maximum item of a max-heap, or a minimum item of a min-heap <code class="docutils literal notranslate"><span class="pre">O(1)</span></code></li>
+<li><strong>pop</strong>: delete the root element <code class="docutils literal notranslate"><span class="pre">O(log(n))</span></code></li>
+<li><strong>heapify</strong>: create a heap out of given array of elements <code class="docutils literal notranslate"><span class="pre">O(n)</span></code></li>
+</ul>
+</div>
+<div class="section" id="question-list">
+<h2>Question List<a class="headerlink" href="#question-list" title="Permalink to this headline">¶</a></h2>
+<p>215. Kth Largest Element in an Array<br />347. Top K Frequent Elements<br />373. Find K Pairs with Smallest Sums <br />414. Third Maximum Number<br />451. Sort Characters By Frequency<br />692. Top K Frequent Words - max heap<br />973. K Closest Points to Origin</p>
+</div>
+<div class="section" id="leetcode-solution">
+<h2>Leetcode Solution<a class="headerlink" href="#leetcode-solution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="leetcode-215-kth-largest-element-in-an-array">
+<h3>Leetcode 215: Kth Largest Element in an Array<a class="headerlink" href="#leetcode-215-kth-largest-element-in-an-array" title="Permalink to this headline">¶</a></h3>
+<p>Since Python heapq library only implements min-heap, we can use -key in min-heap to get the largest number.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findKthLargest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">]</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="o">-</span><span class="n">res</span>
+</pre></div>
+</div>
+<p>Or we can maintain a heap which has k numbers:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">findKthLargest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+        
+        <span class="n">pq</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="n">k</span><span class="p">:]:</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">pq</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">pq</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">pq</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-347-top-k-frequent-elements">
+<h3>Leetcode 347: Top K Frequent Elements<a class="headerlink" href="#leetcode-347-top-k-frequent-elements" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">topKFrequent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+        <span class="n">dic</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        
+        <span class="n">max_heap</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">val</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">max_heap</span><span class="p">)</span>
+        
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">max_heap</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-373-find-k-pairs-with-smallest-sums">
+<h3>Leetcode 373: Find K Pairs with Smallest Sums<a class="headerlink" href="#leetcode-373-find-k-pairs-with-smallest-sums" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">kSmallestPairs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums1</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">nums2</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">nums1</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">nums2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">)</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">k</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[[</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">nums1</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">nums2</span><span class="p">]</span>
+        
+        <span class="n">res</span><span class="p">,</span> <span class="n">cnd</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[(</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">nums2</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums1</span><span class="p">))]</span>
+        
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+            <span class="n">val</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">cnd</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="p">]])</span>
+            
+            <span class="k">if</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums2</span><span class="p">):</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">cnd</span><span class="p">,</span> <span class="p">(</span><span class="n">nums1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums2</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-414-third-maximum-number">
+<h3>Leetcode 414: Third Maximum Number<a class="headerlink" href="#leetcode-414-third-maximum-number" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">thirdMax</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+                <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">heap</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">else</span> <span class="nb">max</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-451-sort-characters-by-frequency">
+<h3>Leetcode 451: Sort Characters By Frequency<a class="headerlink" href="#leetcode-451-sort-characters-by-frequency" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">frequencySort</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        
+        <span class="n">dic</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
+            
+        <span class="n">res</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">heap</span><span class="p">)):</span>
+            <span class="n">v</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="n">res</span>
+        
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-692-top-k-frequent-words">
+<h3>Leetcode 692: Top K Frequent Words<a class="headerlink" href="#leetcode-692-top-k-frequent-words" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">topKFrequent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+	
+	    <span class="c1"># Create a dictionary whose key is the word and value is the frequency</span>
+        <span class="n">dic</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">Counter</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+		
+		<span class="c1"># Python heapq.heapify implements a min-heap, but we need a max-heap.</span>
+		<span class="c1"># The easiest way is use -freq in min-heap, and the highest frequency will be popped first</span>
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="n">freq</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="k">for</span> <span class="n">word</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">dic</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+        <span class="n">heapq</span><span class="o">.</span><span class="n">heapify</span><span class="p">(</span><span class="n">heap</span><span class="p">)</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+		    <span class="c1"># heapq will handle &quot;If two words have the same frequency, then the word with the lower alphabetical order comes first&quot;</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="leetcode-973-k-closest-points-to-origin">
+<h3>Leetcode 973: K Closest Points to Origin<a class="headerlink" href="#leetcode-973-k-closest-points-to-origin" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">kClosest</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">points</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">K</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+        
+        <span class="n">heap</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
+            <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">point</span><span class="p">))</span>
+        
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">K</span><span class="p">):</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">heapq</span><span class="o">.</span><span class="n">heappop</span><span class="p">(</span><span class="n">heap</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="Longest Common Subsequence.html" class="btn btn-neutral float-right" title="Longest Common Subsequence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Binary Tree Traversal.html" class="btn btn-neutral float-left" title="Binary Tree Traversal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Picasso.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

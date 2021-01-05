@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html4" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>interview-notebook &mdash; Interview Preparation Notebook 1.1 documentation</title>
+  <title>Interview Notebook &mdash; Interview Preparation Notebook 1.1 documentation</title>
   
 
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -49,7 +52,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Interview Preparation Notebook
+            <a href="index.html" class="icon icon-home"> Interview Preparation Notebook
           
 
           
@@ -83,7 +86,9 @@
               <p class="caption"><span class="caption-text">Algorithm</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="notes/Binary Tree Traversal.html">Binary Tree Traversal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes/Heap.html">Heap</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes/Longest Common Subsequence.html">Longest Common Subsequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notes/Monotonic Queue.html">Monotonic Queue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notes/Single Number.html">Single Number</a></li>
 </ul>
 
@@ -125,18 +130,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>interview-notebook</li>
+      <li>Interview Notebook</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -151,7 +158,38 @@
            <div itemprop="articleBody">
             
   <div class="section" id="interview-notebook">
-<h1>interview-notebook<a class="headerlink" href="#interview-notebook" title="Permalink to this headline">¶</a></h1>
+<h1>Interview Notebook<a class="headerlink" href="#interview-notebook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="welcome">
+<h2>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">¶</a></h2>
+<p>I start to compile notes for preparing interviews. In the algorithm part, I try to aggregate similar problems and summary the common solutions. I believe it is helpful. If you find anything wrong or you want to share your own ideas, feel free to make a PR.</p>
+<p><a class="reference external" href="https://picassoshair.github.io/interview-notebook/_build/html">Interview Notebook</a></p>
+</div>
+<div class="section" id="sphinx-setup">
+<h2>Sphinx Setup<a class="headerlink" href="#sphinx-setup" title="Permalink to this headline">¶</a></h2>
+<p>I use Ubuntu Docker Container for setting up Sphinx and building the static webpages.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get update
+
+<span class="c1"># Install Sphinx</span>
+apt-get install python3-sphinx
+
+<span class="c1"># Install pip</span>
+apt-get install python3-pip
+
+<span class="c1"># Install recommonmark for md file supporting </span>
+/bin/pip3 install recommonmark
+
+<span class="c1"># Install sphinx-rtd-theme</span>
+/bin/pip3 install sphinx-rtd-theme
+
+<span class="c1"># Build static webpage</span>
+make html
+</pre></div>
+</div>
+</div>
+<div class="section" id="github-pages">
+<h2>Github Pages<a class="headerlink" href="#github-pages" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> branch is for notes. The <code class="docutils literal notranslate"><span class="pre">gp_pages</span></code> branch if for holding the static website.</p>
+</div>
 </div>
 
 
@@ -159,28 +197,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2020, Picasso
+        &#169; Copyright 2020, Picasso.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

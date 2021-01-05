@@ -120,3 +120,27 @@ class Solution:
 https://blog.csdn.net/qq_17550379/article/details/83926804
 https://blog.csdn.net/jiangxiewei/article/details/82227451
 
+
+### Leetcode 260
+#### Code
+```python
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        
+        diff = reduce((lambda x, y: x ^ y), nums)
+        diff &= -diff
+
+        first, second = 0, 0
+        for num in nums:
+            if diff & num:
+                first ^= num
+            else:
+                second ^= num
+
+        return [first, second]
+```
+
+
+#### Reference
+https://leetcode.com/problems/single-number-iii/discuss/68901/Sharing-explanation-of-the-solution
+
